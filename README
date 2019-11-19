@@ -46,3 +46,18 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+
+Customizations
+--------------
+Colorscheme:
+1. Gruvbox: https://github.com/morhetz/gruvbox
+
+Patches:
+1. https://dwm.suckless.org/patches/systray/
+2. https://dwm.suckless.org/patches/pertag/
+3. https://dwm.suckless.org/patches/movestack/
+4. https://dwm.suckless.org/patches/notitle
+5. https://dwm.suckless.org/patches/barpadding/
+6. https://lists.suckless.org/dev/att-7590/shiftview.c
+7. https://dwm.suckless.org/patches/noborder/
