@@ -18,7 +18,7 @@ static const unsigned int systrayspacing = 2;
 static const int systraypinningfailfirst = 1;
 
 static const char *fonts[] = {
-	"monospace:size=9:antialias=true:autohint=true",
+	"monospace:size=8:antialias=true:autohint=true",
 };
 // "monospace:size=9:antialias=true:autohint=true",
 /* defult */

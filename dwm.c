@@ -810,11 +810,7 @@ dirtomon(int dir)
 void
 drawbar(Monitor *m)
 {
-<<<<<<< HEAD
-	int x, w, tw = 0;
-=======
 	int x, w, sw = 0, stw = 0;
->>>>>>> cf5ca63... dwm: init my fork.
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
@@ -826,13 +822,8 @@ drawbar(Monitor *m)
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
-<<<<<<< HEAD
-		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
-=======
 		sw = TEXTW(stext) - lrpad / 2 + barpadding;
 		drw_text(drw, m->ww - sw - stw, 0, sw, bh, lrpad / 2 - 2, stext, 0);
->>>>>>> cf5ca63... dwm: init my fork.
 	}
 
 	resizebarwin(m);
@@ -856,22 +847,9 @@ drawbar(Monitor *m)
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
-<<<<<<< HEAD
-	if ((w = m->ww - tw - x) > bh) {
-		if (m->sel) {
-			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
-			if (m->sel->isfloating)
-				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
-		} else {
-			drw_setscheme(drw, scheme[SchemeNorm]);
-			drw_rect(drw, x, 0, w, bh, 1, 1);
-		}
-=======
 	if ((w = m->ww - sw - stw - x) > bh) {
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		drw_rect(drw, x, 0, w, bh, 1, 1);
->>>>>>> cf5ca63... dwm: init my fork.
 	}
 	drw_map(drw, m->barwin, 0, 0, m->ww - stw, bh);
 }
@@ -1919,14 +1897,9 @@ tile(Monitor *m)
 				my += HEIGHT(c);
 		} else {
 			h = (m->wh - ty) / (n - i);
-<<<<<<< HEAD
-			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), False);
 			if (ty + HEIGHT(c) < m->wh)
 				ty += HEIGHT(c);
-=======
-			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), False);
-			ty += HEIGHT(c);
->>>>>>> cf5ca63... dwm: init my fork.
 		}
 }
 
