@@ -81,9 +81,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[]   = {"dmenu_run_recent", NULL};
-static const char *passcmd[]    = {"/bin/sh", "-c", "gopass ls --flat | dmenu | xargs --no-run-if-empty gopass show -c", NULL};
+static const char *passcmd[]    = {"passmenu", NULL};
 static const char *termcmd[]    = {"st", NULL};
-static const char *lockcmd[]    = {"i3lock", "-n", "-c", "282828", NULL};
+static const char *lockcmd[]    = {"i3lock", NULL};
 
 #include "functions.c"
 
