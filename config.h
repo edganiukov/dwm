@@ -80,18 +80,12 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[]   = {"dmenu_run_recent", NULL};
-static const char *passcmd[]    = {"passmenu", NULL};
 static const char *termcmd[]    = {"st", NULL};
-static const char *lockcmd[]    = {"i3lock", NULL};
 
 #include "functions.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = passcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_l,      focusstack,     {.i = -1 } },
@@ -126,7 +120,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Right,  shiftview,      {.i = +1} },
 	{ MODKEY,                       XK_Left,   shiftview,      {.i = -1} },
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = lockcmd} },
 };
 
 /* button definitions */
